@@ -1,0 +1,7 @@
+/.env
+/src/app/database/__pycache__
+/.venv
+/.vscode
+/src/app/__pycache__
+/uv.lock
+/.python-version
