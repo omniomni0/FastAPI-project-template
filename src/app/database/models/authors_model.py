@@ -25,5 +25,5 @@ class AuthorsOrm:
 		async with session_factory() as session:
 			result = await session.execute(select(AuthorsModel))
 			authors = result.scalars().all()
-			res = {"authors": [authors]}
+			res = {"authors": authors}
 			return res
