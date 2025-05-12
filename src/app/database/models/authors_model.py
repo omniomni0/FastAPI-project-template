@@ -25,9 +25,5 @@ class AuthorsOrm:
 		async with session_factory() as session:
 			result = await session.execute(select(AuthorsModel))
 			authors = result.scalars().all()
-
-			authors_dict = [author.__dict__ for author in authors]
-			for author in authors_dict:
-				author.pop('_sa_instance_state', None)
-
-			return authors_dict
+			res = {"authors": [authors]}
+			return res

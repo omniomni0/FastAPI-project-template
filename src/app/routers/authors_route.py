@@ -7,7 +7,8 @@ authors_route = APIRouter(prefix="/authors", tags=["Authors list"])
 
 @authors_route.get("/")
 async def get_authors():
-	return {AuthorsOrm.get_authors_as_dict()}
+	res = await AuthorsOrm.get_authors_as_dict()
+	return res
 
 
 @authors_route.post("/")

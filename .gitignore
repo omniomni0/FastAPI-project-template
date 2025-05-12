@@ -5,3 +5,5 @@
 /src/app/__pycache__
 /uv.lock
 /.python-version
+/src/app/database/models/__pycache__
+/src/app/schemas/__pycache__
