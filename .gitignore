@@ -1,9 +1,10 @@
-/.env
-/src/app/database/__pycache__
 /.venv
 /.vscode
-/src/app/__pycache__
-/uv.lock
-/.python-version
-/src/app/database/models/__pycache__
+/src/app/database/__pycache__
+.env
+.python-version
+uv.lock
 /src/app/schemas/__pycache__
+/src/app/routers/__pycache__
+/src/app/database/models/__pycache__
+/src/app/__pycache__
