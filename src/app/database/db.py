@@ -8,7 +8,7 @@ engine = create_async_engine(
 	url=settings.DB_URL,
 	echo=True
 )
-session_factory = async_sessionmaker(engine)
+session_factory = async_sessionmaker(engine, expire_on_commit=False)
 
 async def create_tables():
 	async with engine.begin() as conn:

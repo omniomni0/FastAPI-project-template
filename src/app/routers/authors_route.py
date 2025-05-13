@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from schemas.author_schema import AuthorSchema
-from database.models.authors_model import AuthorsOrm
+from database.models.authors_model import AuthorsModel, AuthorsOrm
 from database.db import session_factory
 
 authors_route = APIRouter(prefix="/authors", tags=["Authors list"])
@@ -14,7 +14,13 @@ async def get_authors():
 @authors_route.post("/")
 async def add_new_author(author: AuthorSchema):
 	async with session_factory() as session:
-		session.add(author)
+		new_author = AuthorsModel(
+			name=author.name,
+			age=author.age,
+			email=author.email
+		)
+
+		session.add(new_author)
 		await session.commit()
 
-	return {"succses": True}
+		return {"succses": True}
