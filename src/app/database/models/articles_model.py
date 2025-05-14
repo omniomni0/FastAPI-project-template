@@ -9,7 +9,7 @@ class ArticlesModel(Base): # table "articles" model
 	id: Mapped[int] = mapped_column(primary_key=True)
 	title: Mapped[str]
 	created_at: Mapped[datetime] = mapped_column(server_default=text("TIMEZONE('utc', now())"))
-	author: Mapped[str]
+	author_id: Mapped[int] # надо доделать, тут нужно отношение мужду таблицами
 	body: Mapped[str]
 
 class ArticlesOrm:
