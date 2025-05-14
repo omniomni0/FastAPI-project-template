@@ -13,9 +13,10 @@ async def get_articles():
 @articles_route.post("/")
 async def add_new_article(article: ArticleSchema):
 	async with session_factory() as session:
+		
 		new_article = ArticlesModel(
 			title=article.title,
-			author=article.author,
+			author_id=article.author_id,
 			body=article.body
 		)
 

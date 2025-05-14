@@ -1,6 +1,8 @@
-__pycache__
+**/__pycache__
 /.venv
 /.vscode
 .env
 .python-version
 uv.lock
+/src/app/database/models/__pycache__
+/src/app/database/models/__pycache__/authors_model.cpython-311.pyc
