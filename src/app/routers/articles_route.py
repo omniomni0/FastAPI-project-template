@@ -5,12 +5,12 @@ from database.db import session_factory
 
 articles_route = APIRouter(prefix="/articles", tags=["Articles list"])
 
-@articles_route.get("/")
+@articles_route.get("/", name="Get articles as dict")
 async def get_articles():
 	res = await ArticlesOrm.get_articles_as_dict()
 	return res 
 
-@articles_route.post("/")
+@articles_route.post("/", name="Add new article")
 async def add_new_article(article: ArticleSchema):
 	async with session_factory() as session:
 		
@@ -23,4 +23,4 @@ async def add_new_article(article: ArticleSchema):
 		session.add(new_article)
 		await session.commit()
 
-		return {"success": True}
+		return {"ok": True}

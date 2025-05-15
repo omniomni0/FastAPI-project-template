@@ -23,4 +23,4 @@ async def add_new_author(author: AuthorSchema):
 		session.add(new_author)
 		await session.commit()
 
-		return {"succses": True}
+		return {"ok": True}
