@@ -17,13 +17,13 @@ class ArticlesOrm:
 	async def add_articles(): # add authors to the table
 		async with session_factory() as session:
 			session.add_all([ArticlesModel(
-				author="Shadow_Fiend", 
+				author_id=1, 
 				title="Почему дл имба",
 				body="""ну крч значит закупаемся в начале, лупим крипов и сразу после птшек берем дл"""
 				),
 				
 				ArticlesModel(
-				author="Crystal_Maiden", 
+				author_id=2, 
 				title="Сборка через глимер хуйня", 
 				body="""Не, внатуре глимер ваще хуета та еще, берите шб, качайте до сильвера и не парьтесь хули""")
 			])
