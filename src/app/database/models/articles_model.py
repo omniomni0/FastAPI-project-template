@@ -12,7 +12,7 @@ class ArticlesModel(Base): # table "articles" model
 	author_id: Mapped[int] # надо доделать, тут нужно отношение мужду таблицами
 	body: Mapped[str]
 
-class ArticlesOrm:
+class ArticlesOrm: # методы для таблицы статей. Да, колхоз, но удобно
 	@staticmethod
 	async def add_articles(): # add authors to the table
 		async with session_factory() as session:
@@ -32,7 +32,7 @@ class ArticlesOrm:
 	@staticmethod
 	async def get_articles_as_dict():
 		async with session_factory() as session:
-			result = await session.execute(select(ArticlesModel))
-			articles = result.scalars().all()
+			result = await session.execute(select(ArticlesModel)) 
+			articles = result.scalars().all() # список всех статей
 			res = {"articles": articles}
 			return res

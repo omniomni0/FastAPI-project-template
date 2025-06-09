@@ -2,10 +2,9 @@ from fastapi import APIRouter
 from schemas.article_schema import ArticleSchema
 from database.models.articles_model import ArticlesModel, ArticlesOrm
 from database.db import session_factory
+articles_route = APIRouter(prefix="/articles", tags=["Articles list"]) # роутер для статей
 
-articles_route = APIRouter(prefix="/articles", tags=["Articles list"])
-
-@articles_route.get("/", name="Get articles as dict")
+@articles_route.get("/", name="Get articles as json")
 async def get_articles():
 	res = await ArticlesOrm.get_articles_as_dict()
 	return res 

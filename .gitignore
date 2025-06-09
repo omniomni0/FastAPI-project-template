@@ -6,3 +6,4 @@ __pycache__
 .env
 .python-version
 uv.lock
+/.pytest_cache
